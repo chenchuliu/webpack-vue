@@ -7,12 +7,16 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: './src/main.ts',
+  devServer:{
+    port: 8081
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
   module: {
+    
     rules: [
       {
         test: /\.vue$/,
@@ -50,5 +54,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   // 取消多余的打包提示
-  stats: 'errors-only'
+  stats: 'errors-only',
+  
 }
